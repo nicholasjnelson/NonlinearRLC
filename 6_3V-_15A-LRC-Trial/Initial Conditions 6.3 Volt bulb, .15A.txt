@@ -1,0 +1,32 @@
+Initial conditions 
+Bulb type: 6.3V @ .15A 
+Bulb # 1
+Frequency: 10.00
+ Hz
+Voltage Amplitude 1000
+ milivolts
+RDP_FG2A configured
+Turning on Red DAWG Function Generator...
+DAQ acquisition started...
+
+Channel DAQ1/ai0 (Shunt)
+Sample count: 2000
+Sample interval dt: 0.001
+Expected duration: 1.999
+Your old duration: 2.0
+Estimated frequency for DAQ1/ai0: 10.0000 Hz
+
+Channel DAQ1/ai1 (Capacitor)
+Sample count: 2000
+Sample interval dt: 0.001
+Expected duration: 1.999
+Your old duration: 2.0
+Estimated frequency for DAQ1/ai1: 10.0000 Hz
+
+Channel DAQ1/ai2 (Light Bulb)
+Sample count: 2000
+Sample interval dt: 0.001
+Expected duration: 1.999
+Your old duration: 2.0
+Estimated frequency for DAQ1/ai2: 10.0000 Hz
+DAQ acquisition complete.
