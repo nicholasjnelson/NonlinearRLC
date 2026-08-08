@@ -39,14 +39,14 @@ current = V_shunt / 0.1 # shunt resistance = 0.1 ohm
 params = np.zeros(10)
 params[0] = 10.0  # V0
 params[1] = 10.0  # drive_freq
-params[2] = 3.48  # R0
-params[3] = 1.18*0.00285  # alpha
-params[4] = 4.5  # Stray linear resistance
-params[5] = 1.4*9.108e-5  # radius
-params[6] = 1.55*1.414e-4  # length
-params[7] = 0.017  # capacitance
+params[2] = 3.795  # R0
+params[3] = 0.00285  # alpha
+params[4] = 5.0  # Stray linear resistance
+params[5] = 9.108e-5  # radius
+params[6] = 1.414e-4  # length
+params[7] = 0.018  # capacitance
 params[8] = 0.01  # inductance
-params[9] = -2.5  # phase_shift
+params[9] = -2.622  # phase_shift
 
 state_initial = np.array([0.0, 0.0, T0])
 
@@ -79,14 +79,9 @@ plt.xlabel("Charge (C)")
 plt.ylabel("Current (A)")
 plt.legend()
 
-R_data = V_LB/current
-R_good_locs = np.where((R_data > 30.0) & (R_data<45.0))
-R_model = params[2]*(1.0+params[3]*(sol.y[2,:] - T0))
-
 plt.figure()
-plt.plot(current[R_good_locs], R_data[R_good_locs], label="Experiment", color='r', marker='.', linestyle='None')
-plt.plot(sol.y[1,:], R_model, label="Model", color='b')   
-#plt.ylim(np.min(R_model), np.max(R_model))
+plt.plot(current, V_LB/current, label="Experiment", color='r', marker='.', linestyle='None')
+plt.plot(sol.y[1,:], params[2]*(1.0+params[3]*(sol.y[2,:] - T0)), label="Model", color='b')   
 plt.xlabel("Current (A)")
 plt.ylabel(r"Resistance ($\Omega$)")
 plt.legend()
